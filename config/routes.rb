@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#form'
+  root 'forms#new'
+
+  resources :forms, only: [:create, :new]
 end

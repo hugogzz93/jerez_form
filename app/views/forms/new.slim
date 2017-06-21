@@ -1,0 +1,51 @@
+.card
+	.card-header
+	.card-block
+		= form_tag('/forms', method: :put) do
+			.input_group
+				= label_tag :project_name, "Nombre de la Obra"
+				= text_field_tag :project_name, nil, class: 'form-control'
+			.input_group
+				= label_tag :client_name, "Nombre del Cliente"
+				= text_field_tag :client_name, nil, class: 'form-control'
+			.input_group
+				= label_tag :direction, "Dirección (Calle, Num)"
+				= text_field_tag :direction, nil, class: 'form-control'
+			.input_group
+				= label_tag :colony, "Colonia"
+				= text_field_tag :colony, nil, class: 'form-control'
+			.input_group
+				= label_tag :street, "Entre Calles/Esquina con"
+				= text_field_tag :street, nil, class: 'form-control'
+			.input_group
+				= label_tag :municipality, "Municipio"
+				= text_field_tag :municipality, nil, class: 'form-control'
+			.input_group
+				= label_tag :state, "Estado"
+				= text_field_tag :state, nil, class: 'form-control'
+			.input_group
+				= label_tag :zip_code, "Codigo Postal"
+				= text_field_tag :zip_code, nil, class: 'form-control'
+			.input_group
+				= label_tag :recipient, "Quien Recibe"
+				= text_field_tag :recipient, nil, class: 'form-control'
+			.input_group
+				= label_tag :phone, "Teléfono"
+				= text_field_tag :phone, nil, class: 'form-control'
+			.input_group
+				= label_tag :schedule, "Horarío"
+				= text_field_tag :schedule, nil, class: 'form-control'
+			.input_group
+				= label_tag :link, "Croquis/Liga Google Maps"
+				= text_field_tag :link, nil, class: 'form-control'
+			.input_group
+				= label_tag :coordinates, "Coordenadas"
+				= text_field_tag :coordinates, nil, class: 'form-control'
+			.input_group
+				= label_tag :capacity, "Capacidad (tons) Camiones"
+				= text_field_tag :capacity, nil, class: 'form-control'
+			.input_group
+				= label_tag :vendor_name, "Nombre del Vendedor"
+				= text_field_tag :vendor_name, nil, class: 'form-control'
+			= submit_tag "Enviar"
+			
