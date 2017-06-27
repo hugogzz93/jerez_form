@@ -4,6 +4,5 @@ class FormsController < ApplicationController
 	end
 
 	def create
-		
 	end
 end
