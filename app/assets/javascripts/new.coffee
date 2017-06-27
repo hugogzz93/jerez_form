@@ -15,6 +15,7 @@ initMap = ->
       lng: 150.644
     zoom: 6)
   infoWindow = new (google.maps.InfoWindow)
+  alert(navigator.geolocation)
   if navigator.geolocation
     navigator.geolocation.getCurrentPosition ((position) ->
       pos = 
@@ -24,6 +25,7 @@ initMap = ->
       infoWindow.setContent 'Location found.'
       infoWindow.open map
       map.setCenter pos
+      alert("location is #{map.getCenter().toUrlValue()}")
       $('#maps-link').val("http://www.google.com/maps/place/#{map.getCenter().toUrlValue()}")
       $('#coordinates').val map.getCenter().toUrlValue()
       return
