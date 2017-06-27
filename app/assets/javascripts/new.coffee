@@ -15,9 +15,10 @@ initMap = ->
       lng: 150.644
     zoom: 6)
   infoWindow = new (google.maps.InfoWindow)
-  alert(navigator.geolocation)
   if navigator.geolocation
+    alert("getting current position")
     navigator.geolocation.getCurrentPosition ((position) ->
+      alert("got it")
       pos = 
         lat: position.coords.latitude
         lng: position.coords.longitude
