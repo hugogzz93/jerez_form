@@ -15,7 +15,6 @@ initMap = ->
       lng: 150.644
     zoom: 6)
   infoWindow = new (google.maps.InfoWindow)
-  # Try HTML5 geolocation.
   if navigator.geolocation
     navigator.geolocation.getCurrentPosition ((position) ->
       pos = 
@@ -25,8 +24,8 @@ initMap = ->
       infoWindow.setContent 'Location found.'
       infoWindow.open map
       map.setCenter pos
-      map.getCe
-      console.log "http://www.google.com/maps/place/#{map.getCenter().toUrlValue()}"
+      $('#maps-link').val("http://www.google.com/maps/place/#{map.getCenter().toUrlValue()}")
+      $('#coordinates').val map.getCenter().toUrlValue()
       return
     ), ->
       handleLocationError true, infoWindow, map.getCenter()
