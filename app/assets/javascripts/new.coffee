@@ -1,12 +1,14 @@
 $(document).on 'forms#new:loaded', ->
-	console.log 'loaded'
-	map = undefined
-	infoWindow = undefined
-	initMap()
+  console.log 'loaded'
+  map = undefined
+  infoWindow = undefined
+  initMap()
 
-
-
-
+  $('input, textarea', 'body').on 'blur', (e) ->
+    if e.target.value != ''
+      $(e.target).addClass('has-content')
+    else
+      $(e.target).removeClass('has-content')
 
 initMap = ->
   map = new (google.maps.Map)(document.getElementById('map'),
@@ -16,9 +18,7 @@ initMap = ->
     zoom: 6)
   infoWindow = new (google.maps.InfoWindow)
   if navigator.geolocation
-    alert("getting current position")
     navigator.geolocation.getCurrentPosition ((position) ->
-      alert("got it")
       pos = 
         lat: position.coords.latitude
         lng: position.coords.longitude
@@ -26,9 +26,10 @@ initMap = ->
       infoWindow.setContent 'Location found.'
       infoWindow.open map
       map.setCenter pos
-      alert("location is #{map.getCenter().toUrlValue()}")
       $('#maps-link').val("http://www.google.com/maps/place/#{map.getCenter().toUrlValue()}")
-      $('#coordinates').val map.getCenter().toUrlValue()
+                     .addClass('has-content')
+      $('#coordinates').val(map.getCenter().toUrlValue())
+                       .addClass('has-content')
       return
     ), ->
       handleLocationError true, infoWindow, map.getCenter()

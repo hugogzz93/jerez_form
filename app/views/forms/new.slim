@@ -1,54 +1,71 @@
-.card
-	.card-header
-	.card-block
-		= form_tag(controller: 'forms', action: 'create', method: 'put') do
-			.input_group
-				= label_tag :project_name, "Nombre de la Obra"
-				= text_field_tag :project_name, nil, class: 'form-control'
-			.input_group
-				= label_tag :client_name, "Nombre del Cliente"
-				= text_field_tag :client_name, nil, class: 'form-control'
-			.input_group
-				= label_tag :direction, "Dirección (Calle, Num)"
-				= text_field_tag :direction, nil, class: 'form-control'
-			.input_group
-				= label_tag :colony, "Colonia"
-				= text_field_tag :colony, nil, class: 'form-control'
-			.input_group
-				= label_tag :street, "Entre Calles/Esquina con"
-				= text_field_tag :street, nil, class: 'form-control'
-			.input_group
-				= label_tag :municipality, "Municipio"
-				= text_field_tag :municipality, nil, class: 'form-control'
-			.input_group
-				= label_tag :state, "Estado"
-				= text_field_tag :state, nil, class: 'form-control'
-			.input_group
-				= label_tag :zip_code, "Codigo Postal"
-				= text_field_tag :zip_code, nil, class: 'form-control'
-			.input_group
-				= label_tag :recipient, "Quien Recibe"
-				= text_field_tag :recipient, nil, class: 'form-control'
-			.input_group
-				= label_tag :phone, "Teléfono"
-				= text_field_tag :phone, nil, class: 'form-control'
-			.input_group
-				= label_tag :schedule, "Horarío"
-				= text_field_tag :schedule, nil, class: 'form-control'
-			.input_group
-				= label_tag :link, "Croquis/Liga Google Maps"
-				= text_field_tag :link, nil, class: 'form-control', id: 'maps-link'
-			.input_group
-				= label_tag :coordinates, "Coordenadas"
-				= text_field_tag :coordinates, nil, class: 'form-control', id: 'coordinates'
-			.input_group
-				= label_tag :capacity, "Capacidad (tons) Camiones"
-				= text_field_tag :capacity, nil, class: 'form-control'
-			.input_group
-				= label_tag :vendor_name, "Nombre del Vendedor"
-				= text_field_tag :vendor_name, nil, class: 'form-control'
-			= submit_tag "Enviar"
-			/ AIzaSyAOAlwWzc-8o3K6qZvljYNNLoHJSkL7pYA
+.block
+	= form_tag(controller: 'forms', action: 'create', method: 'put') do
+		.row
+			.col-12.in-box
+				= text_field_tag :project_name, nil
+				.label Nombre de la Obra
+
+			.col-6.in-box
+				= text_field_tag :client_name, nil
+				.label Nombre del Cliente
+			.col-6.in-box
+				= text_field_tag :vendor_name, nil
+				.label Nombre del Vendedor
+
+			.col-8.in-box
+				= text_field_tag :direction, nil
+				.label Dirección Calle y Num
+			.col-4.in-box
+				= text_field_tag :colony, nil
+				.label Colonia
+
+			.col-8.in-box
+				= text_field_tag :street, nil
+				.label Entre calles/Esquina con
+			.col-4.in-box
+				= text_field_tag :municipality, nil
+				.label Municipio
+
+			.col-8.in-box
+				= text_field_tag :state, nil
+				.label Estado
+			.col-4.in-box
+				= text_field_tag :zip_code, nil
+				.label Código Postal
+
+			.col-6.in-box
+				= text_field_tag :recipient, nil
+				.label Recipiente
+			.col-6.in-box
+				= text_field_tag :phone, nil
+				.label Teléfono
+
+			.col-4.in-box
+				= text_field_tag :schedule, nil
+				.label Horario
+			.col-8.in-box
+				= text_field_tag :capacity, nil
+				.label Capacidad (tons) de Camionesa
+
+
+			.col-8.in-box
+				= text_field_tag :link, nil, id: 'maps-link'
+				.label Croquis
+			.col-4.in-box
+				= text_field_tag :coordinates, nil, id: 'coordinates'
+				.label Coordenadas
+
+			.col-12.in-box
+				= text_area_tag :how_to_get, nil, rows: 10, cols: 25
+				.label Como Llegar
+			.col-12.in-box
+				= text_area_tag :security, nil, rows: 10, cols: 25
+				.label Equipo de Seguridad
+			.col-6.in-box
+				= select_tag :recipient, options_for_select(['ventascas1@materialesjerez.com.mx', 'ventascas2@materialesjerez.com.mx'], 'ventascas1@materialesjerez.com.mx')
+			.col-6.in-box
+				= submit_tag "Enviar"
+		/ AIzaSyAOAlwWzc-8o3K6qZvljYNNLoHJSkL7pYA
 .row
 	.col-12
 		#map
