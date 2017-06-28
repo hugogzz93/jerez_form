@@ -4,6 +4,7 @@ class FormsController < ApplicationController
 	end
 
 	def create
-		FormMailer.send_form(params.keys.map {|x| params[x]}).deliver_later
+		debugger
+		FormMailer.send_form(params.keys, params.values).deliver_later
 	end
 end

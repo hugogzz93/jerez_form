@@ -84,7 +84,13 @@ $inactive: #CBCCCC;
 		&[type='submit'] {
 			background-color: #46B0D9;
 			color: white;
-			border: 1px solid #0F7DC1;
+			transition: 0.4s;
+
+			&:active {
+				background-color: #538A30;
+				border: 1px solid #407224;
+				transition: 0.4s;
+			}
 		}
 	}
 

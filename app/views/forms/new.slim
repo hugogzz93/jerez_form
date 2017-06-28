@@ -54,15 +54,14 @@
 			.col-4.in-box
 				= text_field_tag :coordinates, nil, id: 'coordinates'
 				.label Coordenadas
-
 			.col-12.in-box
 				= text_area_tag :how_to_get, nil, rows: 10, cols: 25
-				.label Como Llegar
+				.label Como llegar
 			.col-12.in-box
 				= text_area_tag :security, nil, rows: 10, cols: 25
 				.label Equipo de Seguridad
 			.col-6.in-box
-				= select_tag :recipient, options_for_select(['ventascas1@materialesjerez.com.mx', 'ventascas2@materialesjerez.com.mx'], 'ventascas1@materialesjerez.com.mx')
+				= select_tag :mail, options_for_select(['ventascas1@materialesjerez.com.mx', 'ventascas2@materialesjerez.com.mx'], 'ventascas1@materialesjerez.com.mx')
 			.col-6.in-box
 				= submit_tag "Enviar"
 		/ AIzaSyAOAlwWzc-8o3K6qZvljYNNLoHJSkL7pYA
