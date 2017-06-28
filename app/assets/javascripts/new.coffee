@@ -19,26 +19,26 @@ initMap = ->
       lng: 150.644
     zoom: 6)
   infoWindow = new (google.maps.InfoWindow)
-  unless navigator.geolocation
-    navigator.geolocation.getCurrentPosition ((position) ->
-      pos = 
-        lat: position.coords.latitude
-        lng: position.coords.longitude
-      infoWindow.setPosition pos
-      infoWindow.setContent 'Location found.'
-      infoWindow.open map
-      map.setCenter pos
-      $('#maps-link').val("http://www.google.com/maps/place/#{map.getCenter().toUrlValue()}")
-                     .addClass('has-content')
-      $('#coordinates').val(map.getCenter().toUrlValue())
-                       .addClass('has-content')
-      return
-    ), ->
-      handleLocationError true, infoWindow, map.getCenter()
-      return
-  else
-    # Browser doesn't support Geolocation
-    handleLocationError false, infoWindow, map.getCenter()
+  # if navigator.geolocation
+  #   navigator.geolocation.getCurrentPosition ((position) ->
+  #     pos = 
+  #       lat: position.coords.latitude
+  #       lng: position.coords.longitude
+  #     infoWindow.setPosition pos
+  #     infoWindow.setContent 'Location found.'
+  #     infoWindow.open map
+  #     map.setCenter pos
+  #     $('#maps-link').val("http://www.google.com/maps/place/#{map.getCenter().toUrlValue()}")
+  #                    .addClass('has-content')
+  #     $('#coordinates').val(map.getCenter().toUrlValue())
+  #                      .addClass('has-content')
+  #     return
+  #   ), ->
+  #     handleLocationError true, infoWindow, map.getCenter()
+  #     return
+  # else
+  #   # Browser doesn't support Geolocation
+  #   handleLocationError false, infoWindow, map.getCenter()
   return
 
 handleLocationError = (browserHasGeolocation, infoWindow, pos) ->
