@@ -41,7 +41,12 @@ $inactive: #CBCCCC;
 	position: relative;
 	color: #8A8B8B;
 
+	.label {
+		z-index: -1;
+	}
+
 	input, textarea, select {
+		z-index: 99;
 		outline: none;
 		border: 1px solid $bcolor;
 		width: 100%;
@@ -50,6 +55,7 @@ $inactive: #CBCCCC;
 		padding: 0 0.8em;
 		color: #7A7B7B;
 		font-size: 0.9rem;
+		background-color: transparent;
 
 		&.large {
 			min-height: 10em;
@@ -57,7 +63,8 @@ $inactive: #CBCCCC;
 
 		&:focus {
 			background-color: $focusbg;
-			transition: 0.4s
+			transition: 0.4s;
+			z-index: 0;
 		}
 
 		& ~ .label {
@@ -74,6 +81,7 @@ $inactive: #CBCCCC;
 			color: $inactive;
 		  transition: 0.3s;
 		  font-size: 0.8rem;
+		  z-index: 99;
 		  // text-transform: uppercase
 		}
 
