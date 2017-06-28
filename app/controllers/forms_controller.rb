@@ -4,6 +4,29 @@ class FormsController < ApplicationController
 	end
 
 	def create
-		FormMailer.send_form(params.keys, params.values).deliver_later
+		FormMailer.send_form(permitted_params.to_h)
+							.deliver_later
+	end
+
+	def permitted_params
+		params.permit(:project_name, 
+									:client_name, 
+									:vendor_name, 
+									:direction, 
+									:colony, 
+									:stdeet, 
+									:municipality, 
+									:state, 
+									:zip_code, 
+									:recipient, 
+									:phone, 
+									:schedule, 
+									:capacity, 
+									:link, 
+									:coordinates,
+									:how_to_get,
+									:security
+								)
+		
 	end
 end
