@@ -8,7 +8,7 @@ class FormsController < ApplicationController
 		csv_writer.write_to "#{params[:project_name]}.xlsx"
 
 
-		FormMailer.send_form(permitted_params.to_h, [params[:mail], params[:cmail]])
+		FormMailer.send_form(permitted_params.to_h, [params[:mail], params[:mailc]])
 							.deliver_later
 	end
 
