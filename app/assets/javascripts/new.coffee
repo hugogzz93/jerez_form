@@ -19,20 +19,20 @@ initMap = ->
       lat: -34.397
       lng: 150.644
     zoom: 6)
+  window.infoWindow = new (google.maps.InfoWindow)
   geolocate()
   return
 
 geolocate = ->
   $('#geolocate').toggle 'disabled'
-  infoWindow = new (google.maps.InfoWindow)
   if navigator.geolocation
     navigator.geolocation.getCurrentPosition ((position) ->
       pos = 
         lat: position.coords.latitude
         lng: position.coords.longitude
-      infoWindow.setPosition pos
-      infoWindow.setContent 'Location found.'
-      infoWindow.open map
+      window.infoWindow.setPosition pos
+      window.infoWindow.setContent 'Location found.'
+      window.infoWindow.open map
       window.map.setCenter pos
       $('#maps-link').val("http://www.google.com/maps/place/#{map.getCenter().toUrlValue()}")
                      .addClass('has-content')
