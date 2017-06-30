@@ -1,0 +1,18 @@
+es:
+  client_name: Nombre del Cliente
+  project_name: Nombre de la Obra
+  vendor_name: Nombre del Vendedor
+  direction: Dirección Calle y Num
+  colony: Colonia
+  street: Entre calles/Esquina con
+  municipality: Municipio
+  state: Estado
+  zip_code: Código Postal
+  recipient: Quien Recibe
+  phone: Teléfono
+  schedule: Horario
+  capacity: Capacidad (tons) de Camiones
+  link: Croquis
+  coordinates: Coordenadas
+  how_to_get: Como llegar
+  security: Equipo de Seguridad

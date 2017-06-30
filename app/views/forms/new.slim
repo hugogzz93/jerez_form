@@ -2,66 +2,67 @@
 	= form_tag(controller: 'forms', action: 'create', method: 'put') do
 		.row
 			.col-12.in-box
-				= text_field_tag :project_name, nil
+				= text_field_tag :project_name, nil, required: true
 				.label Nombre de la Obra
 
 			.col-6.in-box
-				= text_field_tag :client_name, nil
+				= text_field_tag :client_name, nil, required: true
 				.label Nombre del Cliente
 			.col-6.in-box
-				= text_field_tag :vendor_name, nil
+				= text_field_tag :vendor_name, nil, required: true
 				.label Nombre del Vendedor
 
 			.col-8.in-box
-				= text_field_tag :direction, nil
+				= text_field_tag :direction, nil, required: true
 				.label Dirección Calle y Num
 			.col-4.in-box
-				= text_field_tag :colony, nil
+				= text_field_tag :colony, nil, required: true
 				.label Colonia
 
 			.col-8.in-box
-				= text_field_tag :street, nil
+				= text_field_tag :street, nil, required: true
 				.label Entre calles/Esquina con
 			.col-4.in-box
-				= text_field_tag :municipality, nil
+				= text_field_tag :municipality, nil, required: true
 				.label Municipio
 
 			.col-8.in-box
-				= text_field_tag :state, nil
+				= text_field_tag :state, nil, required: true
 				.label Estado
 			.col-4.in-box
-				= text_field_tag :zip_code, nil
+				= text_field_tag :zip_code, nil, required: true
 				.label Código Postal
 
 			.col-6.in-box
-				= text_field_tag :recipient, nil
+				= text_field_tag :recipient, nil, required: true
 				.label Quien Recibe
 			.col-6.in-box
-				= text_field_tag :phone, nil
+				= text_field_tag :phone, nil, required: true
 				.label Teléfono
 
 			.col-4.in-box
-				= text_field_tag :schedule, nil
+				= text_field_tag :schedule, nil, required: true
 				.label Horario
 			.col-8.in-box
-				= text_field_tag :capacity, nil
+				= text_field_tag :capacity, nil, required: true
 				.label Capacidad (tons) de Camiones
 
 
 			.col-8.in-box
-				= text_field_tag :link, nil, id: 'maps-link'
+				= text_field_tag :link, nil, id: 'maps-link', required: true
 				.label Croquis
 			.col-4.in-box
-				= text_field_tag :coordinates, nil, id: 'coordinates'
+				= text_field_tag :coordinates, nil, id: 'coordinates', required: true
 				.label Coordenadas
 			.col-12.in-box
-				= text_area_tag :how_to_get, nil, rows: 10, cols: 25
+				= text_area_tag :how_to_get, nil, rows: 10, cols: 25, required: true
 				.label Como llegar
 			.col-12.in-box
-				= text_area_tag :security, nil, rows: 10, cols: 25
+				= text_area_tag :security, nil, rows: 10, cols: 25, required: true
 				.label Equipo de Seguridad
 			.col-6.in-box
-				= select_tag :mail, options_for_select(['ventascas1@materialesjerez.com.mx', 'ventascas2@materialesjerez.com.mx'], 'ventascas1@materialesjerez.com.mx')
+				= select_tag :mail, options_for_select(['pinelo93@gmail.com', 'h.gonzalez@ukko.mx'], 'h.gonzalez@ukko.mx')
+				/ = select_tag :mail, options_for_select(['ventascas1@materialesjerez.com.mx', 'ventascas2@materialesjerez.com.mx'], 'ventascas1@materialesjerez.com.mx')
 			.col-6.in-box
 				= submit_tag "Enviar"
 		/ AIzaSyAOAlwWzc-8o3K6qZvljYNNLoHJSkL7pYA

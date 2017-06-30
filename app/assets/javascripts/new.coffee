@@ -9,8 +9,8 @@ $(document).on 'forms#new:loaded', ->
       $(e.target).addClass('has-content')
     else
       $(e.target).removeClass('has-content')
-  # $('.label').on 'click', (e) ->
-  #   $(e.target).siblings('input').focus()
+  $('form').on 'submit', (e) ->
+    swal("Gracias", "Reporte Enviado", "success")
 
 initMap = ->
   map = new (google.maps.Map)(document.getElementById('map'),

@@ -5,7 +5,7 @@ class RowWriter
 	end
 
 	def row(row_num)
-		[@keys[row_num], @data[@keys[row_num]]]
+		["", I18n.t(@keys[row_num]), "", @data[@keys[row_num]]]
 	end
 
 	def how_to_get

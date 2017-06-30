@@ -4,8 +4,13 @@ class FormsController < ApplicationController
 	end
 
 	def create
+		csv_writer = CSVWriter.new permitted_params.to_h
+		csv_writer.write_to 'report.xlsx'
+
 		FormMailer.send_form(permitted_params.to_h)
 							.deliver_later
+
+		
 	end
 
 	def permitted_params
@@ -25,7 +30,8 @@ class FormsController < ApplicationController
 									:link, 
 									:coordinates,
 									:how_to_get,
-									:security
+									:security,
+									:mail
 								)
 		
 	end

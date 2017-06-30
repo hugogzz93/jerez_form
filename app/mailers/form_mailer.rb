@@ -1,10 +1,7 @@
 class FormMailer < ApplicationMailer
 	def send_form(data)
-		row_writer = RowWriter.new data
-		csv_writer = CSVWriter.new row_writer
-		csv_writer.write_to 'report.xlsx'
 		attachments['report.xlsx'] = File.read('report.xlsx')
-		mail(to: 'pinelo93@gmail.com', subject: 'Jerez Formulario')
+		mail(to: data[:mail], subject: 'Jerez Formulario')
 	end
 end
 
