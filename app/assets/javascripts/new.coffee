@@ -44,6 +44,7 @@ geolocate = ->
       $('#geolocate').toggle 'disabled'
       handleLocationError true, infoWindow, map.getCenter()
       return
+    , {enableHighAccuracy: true}
   else
     # Browser doesn't support Geolocation
     handleLocationError false, infoWindow, map.getCenter()
