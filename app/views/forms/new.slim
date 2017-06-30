@@ -62,7 +62,16 @@
 				= text_area_tag :security, nil, rows: 10, cols: 25, required: true
 				.label Equipo de Seguridad
 			.col-6.in-box
-				= select_tag :mail, options_for_select(['ventascas1@materialesjerez.com.mx', 'ventascas2@materialesjerez.com.mx'], 'ventascas1@materialesjerez.com.mx')
+				= select_tag :mail, options_for_select(['ventascas1@materialesjerez.com.mx',
+																								'ventascas2@materialesjerez.com.mx',
+																								'jerezventas2@materialesjerez.com.mx',
+																								'jerezventas3@materialesjerez.com.mx',
+																								'jerezventas4@materialesjerez.com.mx',
+																								'jerezventas5@materialesjerez.com.mx',
+																								'jerezventas6@materialesjerez.com.mx',
+																								'raul_lizalde@materialesjerez.com.mx'],
+																								'ventascas1@materialesjerez.com.mx')
+
 			.col-6.in-box
 				= submit_tag "Enviar"
 		/ AIzaSyAOAlwWzc-8o3K6qZvljYNNLoHJSkL7pYA
