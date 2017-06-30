@@ -48,12 +48,13 @@
 				.label Capacidad (tons) de Camiones
 
 
-			.col-8.in-box
+			.col-6.in-box
 				= text_field_tag :link, nil, id: 'maps-link', required: true
 				.label Croquis
 			.col-4.in-box
 				= text_field_tag :coordinates, nil, id: 'coordinates', required: true
 				.label Coordenadas
+
 			.col-12.in-box
 				= text_area_tag :how_to_get, nil, rows: 10, cols: 25, required: true
 				.label Como llegar
@@ -65,6 +66,9 @@
 			.col-6.in-box
 				= submit_tag "Enviar"
 		/ AIzaSyAOAlwWzc-8o3K6qZvljYNNLoHJSkL7pYA
+.row 
+	.col-4.offset-5 
+		button.btn.btn-primary#geolocate Actualizar Ubicación
 .row
 	.col-12
 		#map
