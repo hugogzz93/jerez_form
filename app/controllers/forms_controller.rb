@@ -9,8 +9,6 @@ class FormsController < ApplicationController
 
 		FormMailer.send_form(permitted_params.to_h)
 							.deliver_later
-
-		
 	end
 
 	def permitted_params
