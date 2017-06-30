@@ -31,7 +31,7 @@ geolocate = ->
         lat: position.coords.latitude
         lng: position.coords.longitude
       window.infoWindow.setPosition pos
-      window.infoWindow.setContent 'Location found.'
+      window.infoWindow.setContent 'Ubicación Encontrada.'
       window.infoWindow.open map
       window.map.setCenter pos
       $('#maps-link').val("http://www.google.com/maps/place/#{map.getCenter().toUrlValue()}")
