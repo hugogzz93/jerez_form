@@ -31,7 +31,8 @@ class FormsController < ApplicationController
 									:coordinates,
 									:how_to_get,
 									:security,
-									:mail
+									:mail,
+									:mailc
 								)
 		
 	end
